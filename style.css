@@ -33,11 +33,25 @@ p{
 }
 /********************************************/
 
+@font-face {
+    font-family: afterShok;
+    src: url(./fonts/After_Shok.ttf);
+}
+:root.black{
+    --arka-plan-rengi:radial-gradient(circle,#18230f,#27391c,#255f38,#1f7d53);
+    --yazi-rengi:#ffff;
+    --shadow-rengi:black;
+}
+:root.whet{
+    --arka-plan-rengi: radial-gradient(circle,#ffff80,#ffaa80,#ff5580,#ff0080);
+    --yazi-rengi: black;
+    --shadow-rengi: #ffff
+}
 body{
  display: flex;
  flex-direction: column;
  height: 100vh;
- background: radial-gradient(circle,#18230f,#27391c,#255f38,#1f7d53);
+ background: var(--arka-plan-rengi);
 }
 
 
@@ -47,16 +61,57 @@ body{
    top: 50%;
    transform: translate(-50%, -50%);
    width: min(600px,80%);
+   text-align: center;
+   box-shadow: 0 0 10px 10px var(--shadow-rengi),inset 0 0 10px 10px var(--shadow-rengi);
 
 }
-
-.form fieldset{
+.form legend{
+    font-size: 1rem;
+}
+.form{
     height: 75vh;
+    color: var(--yazi-rengi);
+    /*
+    border-bottom: 1.5px solid #999999;
+    border-right: 1.5px solid #999999;
+    border-left: 1.5px solid black;
+    border-top: 1.5px solid black;
+    */
+    font-family: "afterShok",serif;
+    font-size: 1rem;
 
 }
-
-input{
-    width: 80%;
+.form fieldset{border: none;} 
+.input{
+    width: 65%;
+    background: none;
+    background-color: transparent;
+    color: var(--yazi-rengi);
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    border: 0;
+    box-shadow: 0 0 30px 2px var(--shadow-rengi);
 }
+input:focus{
+    outline: none;
+   
+    box-shadow: 0 0 20px 10px var(--shadow-rengi);
+}
+.email{
+    margin-top: 8rem;
+}
+.password{
+    margin-top: 3rem;
 
+}
+.containerRadio{
+    margin-top: 45px;
+}
+.radio{
+    box-shadow: inset 0 0 0 13px #ffffff, 0 0 0 5px rgb(255, 255, 255);
+}
+.radio:checked{
+    box-shadow:inset 0 0 0 13px rgb(155, 0, 0), 0 0 0 5px rgb(255, 255, 255);
+}
 

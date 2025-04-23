@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html class="black" lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body >
 
 
     <div class="container">
@@ -15,14 +15,21 @@
                 <legend>Giriş ve Kayıt Alanı</legend>
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" class="input">
                 </div>
                 <div class="password">
                     <label for="password">Şifre</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" class="input">
                 </div>
             </fieldset>
+            <div class="containerRadio">
+                <label for="siyah">Siyah</label>
+                <input type="radio" id="siyah" name="renk" class="radio" checked>
+                <label for="beyaz">Beyaz</label>
+                <input type="radio" id="beyaz" name="renk" class="radio">
+            </div>
         </form>
+        
     </div>
 
 

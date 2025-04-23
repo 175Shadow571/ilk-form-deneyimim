@@ -1,17 +1,26 @@
-let body = document.body;
+const html = document.documentElement; 
+const body = document.body;
+const radioSiyah = document.querySelector("#siyah")
+const radioBeyaz = document.querySelector("#beyaz")
 
+radioBeyaz.addEventListener("click", () =>{html.className= "whet"})
+radioSiyah.addEventListener("click", () =>{html.className= "black"})
+
+let ekranGenisliği = window.innerWidth;
+let ekranUzunluğu = window.innerHeight;
+let genislik = Math.floor(ekranGenisliği/20);
+let uzunluk = Math.floor(ekranUzunluğu/20);
 
 function divOlustur(){
-    
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < uzunluk; i++){
         let div = document.createElement("div");
         div.classList = `babaDiv${i}`
-        div.style = " height:15px;  flex:1; display:flex;" 
+        div.style = `height:20px;flex:1; display:flex;`
         body.appendChild(div)
 
-        for (let a = 0; a <100; a++) {
+        for (let a = 0; a <genislik; a++) {
             let div = document.createElement("div");
-            div.style = " flex:1; opacity:1" 
+            div.style = " flex:1;" 
             let babaDiv = document.querySelector(`.babaDiv${i}`);
             div.classList = `cocukDiv`
             
@@ -35,12 +44,21 @@ function dongu(){
 body.addEventListener("mouseover", (veri)=> {
     let div = veri.target;
     if(div.classList.value == "cocukDiv"){div.style.backgroundColor = dongu()}    
+    let x = veri.clientX
+    let y = veri.clientY
 
-    console.log(veri);
-    
 })
 
 body.addEventListener("mouseleave", (veri)=>{
     let div = veri.target;
     div.style.backgroundColor = ""
+})
+
+
+body.addEventListener("touchmove", (veri)=> {
+    
+    let x = veri.touches[0]
+    let div = document.elementFromPoint(x.clientX,x.clientY)
+    if(div.classList.value == "cocukDiv"){div.style.backgroundColor = dongu()}    
+    
 })
