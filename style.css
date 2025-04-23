@@ -1,0 +1,60 @@
+/*
+    josh's Custom CSS Reset
+    https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+/* Daha sezgisel kutu boyutlandırma
+margin ve padding ide boyutun içinden sayar */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+/* Margin sıfırlama */
+*{
+    margin: 0;
+}
+body{
+    /* Satır aralığı */
+    line-height: 1.5;
+    /* Yazı cilalama */
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg{
+    max-width: 100%;
+}
+input, button, textarea, select{
+    font: inherit;
+}
+/* Metin taşmalarını önlemek için */
+p, h1, h2, h3, h4, h5, h6{
+    overflow-wrap: break-word;
+}
+/* Satır kaydırma iyileştirme */
+p{
+    text-wrap:balance;
+}
+/********************************************/
+
+body{
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ background: radial-gradient(circle,#18230f,#27391c,#255f38,#1f7d53);
+}
+
+
+.container{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: min(600px,98%);
+
+}
+
+.form fieldset{
+    height: 80vh;
+
+}
+
+input{
+    width: 80%;
+}
