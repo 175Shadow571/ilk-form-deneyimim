@@ -44,18 +44,3 @@ body.addEventListener("mouseleave", (veri)=>{
     let div = veri.target;
     div.style.backgroundColor = ""
 })
-
-body.addEventListener("touchstart", (veri)=>{
-    let div = veri.target;
-    if(div.classList.value == "cocukDiv"){div.style.backgroundColor = dongu()}    
-
-    console.log(veri);
-})
-
-body.addEventListener("touchend", (veri)=>{
-  let div = veri.target;
-    div.style.backgroundColor = ""
-})
-
-
-
